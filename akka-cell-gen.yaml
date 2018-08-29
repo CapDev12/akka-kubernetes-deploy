@@ -33,7 +33,7 @@ metadata:
   name: akka-cells
 spec:
   serviceName: akka-cells
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       run: akka-cells
@@ -47,7 +47,7 @@ spec:
         image: capdev12/cell
         env:
         - name: ROLES
-          value: workRole
+          value: genRole
         - name: POD_NAME
           valueFrom:
             fieldRef:
