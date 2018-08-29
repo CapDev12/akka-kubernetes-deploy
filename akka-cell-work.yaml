@@ -21,7 +21,7 @@ spec:
         - name: ROLES
           value: workRole
         - name: SEED_NODES
-          value: akka-seed-0.akka-seed,akka-seed-1.akka-seed
+          value: akka-cells-0.akka-cells,akka-cells-1.akka-cells
         - name: HOST_NAME
           valueFrom:
             fieldRef:
