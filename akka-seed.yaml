@@ -48,7 +48,7 @@ spec:
         env:
         - name: ROLES
           value: workRole
-        - name: POD_NAME
+        - name: HOST_NAME
           valueFrom:
             fieldRef:
               fieldPath: metadata.name
