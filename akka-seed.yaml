@@ -46,6 +46,8 @@ spec:
       - name: akka-seed
         image: capdev12/cell
         env:
+        - name: ROLES
+          value: workRole
         - name: POD_NAME
           valueFrom:
             fieldRef:
