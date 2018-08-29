@@ -33,7 +33,7 @@ metadata:
   name: akka-seed
 spec:
   serviceName: akka-seed
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       run: akka-seed
