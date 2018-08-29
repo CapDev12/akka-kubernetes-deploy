@@ -1,3 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: akka-cells
+spec:
+  ports:
+  - port: 8090
+    protocol: TCP
+    targetPort: 8090
+  selector:
+    run: akka-cells
+  clusterIP: None
+---
+
 apiVersion: apps/v1beta1
 kind: StatefulSet
 metadata:
