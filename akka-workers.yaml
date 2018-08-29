@@ -19,7 +19,7 @@ metadata:
     run: akka-worker
   name: akka-worker
 spec:
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
       run: akka-worker
@@ -30,23 +30,18 @@ spec:
     spec:
       containers:
       - name: akka-worker
-        image: capdev12/cell
+        image: saturnism/akka-cluster-example
         env:
-        - name: ROLES
-          value: workRole
-
         - name: SEED_NODES
           value: akka-seed-0.akka-seed,akka-seed-1.akka-seed
-
         - name: HOST_NAME
           valueFrom:
             fieldRef:
               apiVersion: v1
               fieldPath: status.podIP
-              
         livenessProbe:
           tcpSocket:
-            port: 8090
+            port: 2551
         ports:
-        - containerPort: 8090
+        - containerPort: 2551
           protocol: TCP
