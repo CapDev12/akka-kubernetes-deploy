@@ -32,13 +32,18 @@ spec:
       - name: akka-worker
         image: capdev12/cell
         env:
+        - name: ROLES
+          value: workRole
+
         - name: SEED_NODES
           value: akka-seed-0.akka-seed,akka-seed-1.akka-seed
+
         - name: HOST_NAME
           valueFrom:
             fieldRef:
               apiVersion: v1
               fieldPath: status.podIP
+              
         livenessProbe:
           tcpSocket:
             port: 8090
